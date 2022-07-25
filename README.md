@@ -15,4 +15,6 @@ hash()方法将node折叠为hash，从root节点开始，调用hashChildren()将
 
 decodeNode()方法，根据rlp的list的长度来判断这个编码到底属于什么节点，如果是2个字段那么就是shortNode节点，如果是17个字段，那么就是fullNode，然后分别调用各自的解析函数。
 
+decodeShort()方法，通过key是否有终结符号来判断到底是叶子节点还是扩展节点。如果有终结符那么就是叶子结点，通过SplitString方法解析出来val然后生成一个shortNode。 不过没有终结符，那么说明是扩展节点， 通过decodeRef来解析剩下的节点，然后生成一个shortNode。
+
 decodeRef()方法根据数据类型进行解析，如果类型是list，那么有可能是内容<32的值，那么调用decodeNode进行解析。如果是空节点，那么返回空，如果是hash值，那么构造一个hashNode进行返回。
