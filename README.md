@@ -1,7 +1,7 @@
 # Eth
 【项目名称】research report on MPT
 
-【项目简介】通过对MPT代码的解读，对MPT进行更深一步的了解。
+【项目简介】通过对MPT代码的解读，对MPT进行更深一步的了解。（代码源于网络）
 
 【report】
 
